@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 14:08:54 by juho              #+#    #+#             */
-/*   Updated: 2026/09/01 13:22:46 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 02:32:18 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ int	ft_format(char c, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
+	va_list	ap;
 	int		count;
 
 	count = 0;
-	va_start(args, format);
-	while (*format)
+	va_start(ap, format);
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			count += ft_format(*format, args);
+			count += ft_format(*format, ap);
 		}
 		else
 			count += write(1, format, 1);
