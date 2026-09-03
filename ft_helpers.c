@@ -6,10 +6,18 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 15:36:07 by juho              #+#    #+#             */
-/*   Updated: 2026/09/01 13:24:10 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 14:49:57 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int ft_putstr_pf(char * s)
+{
+	write(1, s, ft_strlen(s));
+}
+
+	
 int	ft_putunbr_pf(unsigned long n)
 {
 	int	i;
