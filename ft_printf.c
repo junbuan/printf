@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 14:08:54 by juho              #+#    #+#             */
-/*   Updated: 2026/09/03 12:55:27 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 14:26:22 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count += ft_format(*format, ap);
+			if (*format != '\0')
+				count += ft_format(*format, ap);
+			else
+				count += write(1, "%", 1);
 		}
 		else
 			count += write(1, format, 1);
