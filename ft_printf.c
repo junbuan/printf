@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 14:08:54 by juho              #+#    #+#             */
-/*   Updated: 2026/09/03 14:26:22 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 17:17:26 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int	ft_format(char c, va_list args)
 {
 	if (c == 'c')
-		return (ft_putchar_fd(va_arg(args, int), 1), 1);
+		return (write(1, &(char){(char)va_arg(args, int)}, 1));
 	else if (c == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr_pf(va_arg(args, char *)));
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr((long)va_arg(args, int)));
+		return (ft_putnbr_pf((long)va_arg(args, int)));
 	else if (c == 'u')
 		return (ft_putunbr_pf((unsigned long)va_arg(args, unsigned int)));
 	else if (c == 'p')
