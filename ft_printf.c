@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 14:08:54 by juho              #+#    #+#             */
-/*   Updated: 2026/09/03 12:54:56 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 12:55:27 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ int	ft_printf(const char *format, ...)
 			count += write(1, format, 1);
 		format++;
 	}
-	va_end(args);
+	va_end(ap);
 	return (count);
 }
