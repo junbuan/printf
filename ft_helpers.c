@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 15:36:07 by juho              #+#    #+#             */
-/*   Updated: 2026/09/03 17:18:14 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 19:35:57 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ int	ft_putstr_pf(char *s)
 
 int	ft_putnbr_pf(long n)
 {
-	int	i;
+	int				i;
+	unsigned long	magnitude;
 
 	i = 0;
 	if (n < 0)
 	{
 		i += write(1, "-", 1);
-		n = -n;
+		magnitude = (unsigned long)(-(n + 1)) + 1;
 	}
-	return (i + ft_putunbr_pf((unsigned long)n));
+	else
+		magnitude = (unsigned long)n;
+	return (i + ft_putunbr_pf(magnitude));
 }
 
 int	ft_putunbr_pf(unsigned long n)
@@ -52,10 +55,10 @@ int	ft_putptr_pf(void *ptr)
 {
 	if (!ptr)
 		return (ft_putstr_pf("(nil)"));
-	return (ft_putstr_pf("0x") + ft_puthex_pf((unsigned long long) ptr, HEX_LOW));
+	return (ft_putstr_pf("0x") + ft_puthex_pf((unsigned long long)ptr, HEX_LOW));
 }
 
-int	ft_puthex_pf(unsigned long n, char *base)
+int	ft_puthex_pf(unsigned long long n, char *base)
 {
 	char	buffer[32];
 	int		i;

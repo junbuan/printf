@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 14:49:46 by juho              #+#    #+#             */
-/*   Updated: 2026/09/03 14:36:54 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/03 19:35:02 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int		ft_putptr_pf(void *ptr);
 int		ft_putunbr_pf(unsigned long n);
 int		ft_format(char c, va_list args);
 int		ft_printf(const char *format, ...);
-int		ft_puthex_pf(unsigned long n, char *base);
+int	ft_puthex_pf(unsigned long long n, char *base);
 
 #endif
