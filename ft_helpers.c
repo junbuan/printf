@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 15:36:07 by juho              #+#    #+#             */
-/*   Updated: 2026/09/03 19:35:57 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/05 18:36:17 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int	ft_putptr_pf(void *ptr)
 {
 	if (!ptr)
 		return (ft_putstr_pf("(nil)"));
-	return (ft_putstr_pf("0x") + ft_puthex_pf((unsigned long long)ptr, HEX_LOW));
+	return (ft_putstr_pf("0x")
+		+ ft_puthex_pf((unsigned long long)ptr, HEX_LOW));
 }
 
 int	ft_puthex_pf(unsigned long long n, char *base)
