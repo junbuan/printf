@@ -6,7 +6,7 @@
 /*   By: juho <juho@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 15:36:07 by juho              #+#    #+#             */
-/*   Updated: 2026/09/05 18:36:17 by juho             ###   ########.fr       */
+/*   Updated: 2026/09/07 14:45:47 by juho             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_putstr_pf(char *s)
 {
-	int	len;
+	int	count;
 
-	len = 0;
+	count = 0;
 	if (!s)
 		return (write(1, "(null)", 6), 6);
 	while (*s)
-		len += write(1, s++, 1);
-	return (len);
+		count += write(1, s++, 1);
+	return (count);
 }
 
 int	ft_putnbr_pf(long n)
