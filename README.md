@@ -2,7 +2,6 @@
 
 *This project has been created as part of the 42 curriculum by juho.*
 
-<!-- If this was a team project, list all logins comma-separated, e.g. [juho, zheng] -->
 
 ## Description
 
